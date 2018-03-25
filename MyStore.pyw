@@ -174,18 +174,16 @@ class SimpleExampleAction(QDialog, Ui_Dialog):
         self.tableView.setColumnWidth(5, 80)
         self.tableView.setColumnWidth(6, 80)
 
-def creatShortcutToDesktop():
+#生成桌面快捷方式
+def creatShortcutToDesktop(fileName, target):
     import winshell
     destDir = winshell.desktop()
-    fileName = "ZhjTool"
-    target = "MyStore.pyw"
-    icon = "app.ico"
 
     winshell.CreateShortcut(
-        Path = os.path.join(destDir, os.path.basename(fileName)+".lnk"),
+        Path = os.path.join(destDir, fileName+".lnk"),
         Target = target,
         StartIn = os.getcwd(),
-        Description = "shortcut test"
+        Description = "shortcut from MyStore.pyw"
     )
 
 if __name__ == "__main__":
@@ -198,7 +196,9 @@ if __name__ == "__main__":
     print(os.getcwd())
     import shutil
     shutil.copy("MyStore.py", "MyStore.pyw")
-    creatShortcutToDesktop()
+    fileName = "ZhjTool"
+    target = "MyStore.pyw"
+    creatShortcutToDesktop(fileName, target)
 
 
     sys.exit(app.exec_())
