@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1113</width>
+    <height>785</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>16</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>销售单历史查询</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <widget class="QPushButton" name="pushButton_backup">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>30</y>
+     <width>151</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>备份到邮箱</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_query">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>30</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>出货查询</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>110</y>
+     <width>1061</width>
+     <height>621</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSplitter" name="splitter">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>571</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="text">
+     <string>姓名:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_cus"/>
+   <widget class="QLabel" name="label_2">
+    <property name="text">
+     <string>商品:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_pro"/>
+  </widget>
+  <widget class="QPushButton" name="pushButton_query_pro">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>30</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>进货查询</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit_cus</tabstop>
+  <tabstop>lineEdit_pro</tabstop>
+  <tabstop>pushButton_query</tabstop>
+  <tabstop>pushButton_query_pro</tabstop>
+  <tabstop>pushButton_backup</tabstop>
+  <tabstop>tableView</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
