@@ -160,6 +160,7 @@ class SimpleExampleAction(QDialog, Ui_Dialog):
         for i in range(len(header)):
             self.model.setHeaderData(i, Qt.Horizontal, header[i])
 
+        #用QSortFilterProxyModel对model进行排序
         self.proxyModel = QSortFilterProxyModel(self)
         self.proxyModel.setSourceModel(self.model)
         self.tableView.setSortingEnabled(True)
