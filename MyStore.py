@@ -35,6 +35,22 @@ def get_last_backup():
 def sql_format(str):
     return ('"%' + str + '%"')
 
+#生成桌面快捷方式
+def creatShortcutToDesktop(fileName, target):
+    # 生成可执行的窗口文件并创建快捷方式到桌面,方便日常使用
+    print(os.getcwd())
+    import shutil
+    shutil.copy("MyStore.py", "MyStore.pyw")
+    import winshell
+    destDir = winshell.desktop()
+
+    winshell.CreateShortcut(
+        Path = os.path.join(destDir, fileName+".lnk"),
+        Target = target,
+        StartIn = os.getcwd(),
+        Description = "shortcut from MyStore.pyw"
+    )
+
 class SimpleExampleAction(QDialog, Ui_Dialog):
     """
     Class documentation goes here.
@@ -97,7 +113,7 @@ class SimpleExampleAction(QDialog, Ui_Dialog):
         
 
     @pyqtSlot()
-    def on_pushButton_query_clicked(self):
+    def on_pushButton_query_sale_clicked(self):
         """
         Slot documentation goes here.
         """
@@ -135,10 +151,9 @@ class SimpleExampleAction(QDialog, Ui_Dialog):
         self.tableView.setColumnWidth(4, 80)
         self.tableView.setColumnWidth(5, 80)
         self.tableView.setColumnWidth(6, 150)
-        
-        #self.tableView.resizeColumnsToContents()
-           
-    def on_pushButton_query_pro_clicked(self):
+
+    @pyqtSlot()
+    def on_pushButton_query_pur_clicked(self):
         customer = self.lineEdit_cus.text()
         product = self.lineEdit_pro.text()
 
@@ -174,32 +189,19 @@ class SimpleExampleAction(QDialog, Ui_Dialog):
         self.tableView.setColumnWidth(5, 80)
         self.tableView.setColumnWidth(6, 80)
 
-#生成桌面快捷方式
-def creatShortcutToDesktop(fileName, target):
-    import winshell
-    destDir = winshell.desktop()
-
-    winshell.CreateShortcut(
-        Path = os.path.join(destDir, fileName+".lnk"),
-        Target = target,
-        StartIn = os.getcwd(),
-        Description = "shortcut from MyStore.pyw"
-    )
+    @pyqtSlot()
+    def on_pushButton_send_shortcut_clicked(self):
+        target = "MyStore.pyw"
+        fileName = "智慧记查询工具"
+        creatShortcutToDesktop(fileName, target)
+        message = "已经发送快捷方式到桌面"
+        QMessageBox.information(self, "提示", message)
 
 if __name__ == "__main__":
     
     app = QApplication(sys.argv)
     dlg = SimpleExampleAction()
     dlg.show()
-
-    #生成可执行的窗口文件并创建快捷方式到桌面,方便日常使用
-    print(os.getcwd())
-    import shutil
-    shutil.copy("MyStore.py", "MyStore.pyw")
-    fileName = "ZhjTool"
-    target = "MyStore.pyw"
-    creatShortcutToDesktop(fileName, target)
-
 
     sys.exit(app.exec_())
     

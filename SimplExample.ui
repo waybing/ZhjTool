@@ -34,7 +34,7 @@
     <string>备份到邮箱</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_query">
+  <widget class="QPushButton" name="pushButton_query_sale">
    <property name="geometry">
     <rect>
      <x>620</x>
@@ -88,7 +88,7 @@
    </widget>
    <widget class="QLineEdit" name="lineEdit_pro"/>
   </widget>
-  <widget class="QPushButton" name="pushButton_query_pro">
+  <widget class="QPushButton" name="pushButton_query_pur">
    <property name="geometry">
     <rect>
      <x>760</x>
@@ -101,12 +101,25 @@
     <string>进货查询</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_send_shortcut">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>740</y>
+     <width>271</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发送快捷方式到桌面</string>
+   </property>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>lineEdit_cus</tabstop>
   <tabstop>lineEdit_pro</tabstop>
-  <tabstop>pushButton_query</tabstop>
-  <tabstop>pushButton_query_pro</tabstop>
+  <tabstop>pushButton_query_sale</tabstop>
+  <tabstop>pushButton_query_pur</tabstop>
   <tabstop>pushButton_backup</tabstop>
   <tabstop>tableView</tabstop>
  </tabstops>
